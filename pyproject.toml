@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "project"
+version = "0.1.0"
+description = "Bank card and account masking utility"
+authors = ["Your Name <you@example.com>"]
+packages = [{ include = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "^7.0.0"
+black = "^24.0.0"
+isort = "^5.13.0"
+mypy = "^1.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# === BLACK ===
+[tool.black]
+line-length = 119
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+# === ISORT ===
+[tool.isort]
+profile = "black"
+line_length = 119
+multi_line_output = 3
+force_single_line = true
+
+# === MYPY ===
+[tool.mypy]
+python_version = 3.11
+disallow_untyped_defs = true
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+exclude = '(venv|\.venv|build|dist)'
