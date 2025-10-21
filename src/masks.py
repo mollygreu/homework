@@ -26,8 +26,9 @@ def get_mask_account(account_number: int) -> str:
     Returns:
         str: Маскированный номер счёта.
     """
+    # Проверяем длину и содержимое номера карты
     digits = str(account_number)
     if not digits.isdigit() or len(digits) < 4:
         raise ValueError("Номер счёта должен содержать только цифры и быть не короче 4 символов")
-
+    # Формируем замаскированный номер
     return f"**{digits[-4:]}"

@@ -22,6 +22,7 @@ def mask_account_card(info: str) -> str:
     Returns:
         str: Маскированная строка с типом и замаскированным номером.
     """
+    # Разделяем входную строку на части
     parts = info.split()
     number = parts[-1]
     name = " ".join(parts[:-1])
@@ -30,6 +31,7 @@ def mask_account_card(info: str) -> str:
     if name.lower().startswith("счет"):
         masked = get_mask_account(int(number))
     else:
+        # В противном случае применяем маску картыpoetry run flake8
         masked = get_mask_card_number(int(number))
 
     return f"{name} {masked}"
