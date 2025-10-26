@@ -31,7 +31,7 @@ def mask_account_card(info: str) -> str:
     if name.lower().startswith("счет"):
         masked = get_mask_account(int(number))
     else:
-        # В противном случае применяем маску картыpoetry run flake8
+        # В противном случае применяем маску карты poetry run flake8
         masked = get_mask_card_number(int(number))
 
     return f"{name} {masked}"
