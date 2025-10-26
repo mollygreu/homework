@@ -6,10 +6,12 @@
 
 ```bash
 poetry install
+```
 
 
 ## Использование
 ## Маскирование реквизитов
+```
 from src.masks import get_mask_card_number, get_mask_account
 
 print(get_mask_card_number(7000792289606361))
@@ -17,9 +19,9 @@ print(get_mask_card_number(7000792289606361))
 
 print(get_mask_account(73654108430135874305))
 # "**4305"
-
+```
 ## Обработка операций
-
+```
 from src.processing import filter_by_state, sort_by_date
 
 operations = [
@@ -29,6 +31,7 @@ operations = [
 
 print(filter_by_state(operations))
 print(sort_by_date(operations))
+```
 
 
 
