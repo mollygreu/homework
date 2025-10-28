@@ -32,6 +32,16 @@ operations = [
 print(filter_by_state(operations))
 print(sort_by_date(operations))
 ```
+## Тестирование
+
+Запуск тестов:
+
+```bash
+poetry run pytest
+
+poetry run pytest --cov=src --cov-report=html
+# Откройте htmlcov/index.html
+```
 
 
 
