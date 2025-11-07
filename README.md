@@ -29,6 +29,21 @@ operations = [
 
 print(filter_by_state(operations))
 print(sort_by_date(operations))
+```
+
+### Модуль generators
+
+Добавлены генераторы для обработки транзакций.
+
+Пример использования:
+```python
+from src.generators import filter_by_currency
+
+usd_ops = filter_by_currency(transactions, "USD")
+print(next(usd_ops))
+
+```
+
 
 
 
