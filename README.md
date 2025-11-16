@@ -29,6 +29,48 @@ operations = [
 
 print(filter_by_state(operations))
 print(sort_by_date(operations))
+```
 
+### Модуль generators
 
+Добавлены генераторы для обработки транзакций.
+
+Пример использования:
+```python
+from src.generators import filter_by_currency
+
+usd_ops = filter_by_currency(transactions, "USD")
+print(next(usd_ops))
+
+```
+## Модуль decorators
+
+В проект добавлен модуль `decorators`, содержащий декоратор `log`.
+
+### log
+
+Декоратор логирует работу функций:
+
+- если передан параметр `filename`, запись идёт в файл;
+- если параметр не передан — лог выводится в консоль.
+
+### Пример использования
+
+```python
+from decorators.log import log
+
+@log()
+def add(a, b):
+    return a + b
+
+@log(filename="mylog.txt")
+def divide(a, b):
+    return a / b
+```
+Успешный вызов - вывод: 
+add ok
+
+Ошибка - вывод: divide error: 
+ZeroDivisionError. Inputs: (10, 0), {}
+---
 
