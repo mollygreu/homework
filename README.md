@@ -29,6 +29,8 @@ operations = [
 
 print(filter_by_state(operations))
 print(sort_by_date(operations))
-
-
-
+```
+## Работа с JSON и API
+- читаем JSON
+- конвертируем валюту через внешний API
+- тесты с Mock и patch
