@@ -29,6 +29,12 @@ operations = [
 
 print(filter_by_state(operations))
 print(sort_by_date(operations))
+```
+## Новая функциональность
+
+Теперь проект поддерживает чтение транзакций из CSV и Excel файлов.
+Функции находятся в модуле `readers`.
+
 
 
 
